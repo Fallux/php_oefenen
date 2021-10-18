@@ -5,7 +5,7 @@ session_start();
 $GLOBALS['config'] = array(
     'mysql' => array(
         // als je localhost wilt doen moet je een DNS table maken en de bestanden laden trager...
-        'host' => '127.0.0.1',
+        'host' => 'localhost',
         'username' => 'root',
         'password' => '',
         'db' => 'leren_php'
