@@ -1,0 +1,1 @@
+<!-- storing cookies method -->

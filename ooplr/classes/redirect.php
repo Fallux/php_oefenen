@@ -1,0 +1,1 @@
+<!-- dealing 404 errors and structuring the header function  -->
