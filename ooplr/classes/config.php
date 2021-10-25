@@ -17,7 +17,7 @@ class Config {
                 // echo $key, ' ';
             }
 
-        // return $config;
+        return $config;
         var_dump($config);
         }
     }

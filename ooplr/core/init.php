@@ -5,14 +5,14 @@ session_start();
 $GLOBALS['config'] = array(
     'mysql' => array(
         // als je localhost wilt doen moet je een DNS table maken en de bestanden laden trager...
-        'host' => 'localhost',
+        'host' => '127.0.0.1',
         'username' => 'root',
         'password' => '',
         'db' => 'leren_php'
     ),
     'remember' => array (
         'cookie_name' => 'hash',
-        'cookie_expiry' => 3600
+        'cookie_expiry' => 604800
 
     ),
     'session' => array (
@@ -20,7 +20,7 @@ $GLOBALS['config'] = array(
     )
 );
 
-spl_autoload_register(function($class){
+spl_autoload_register(function($class) {
     require_once 'classes/' . $class . '.php';
 });
 // include once kan maar je werkt met zo veel bestanden dat het heel vervelend word als je een name wilt veranderen bijvoorbeeld
