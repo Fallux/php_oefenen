@@ -18,7 +18,7 @@ class Config {
             }
 
         return $config;
-        var_dump($config);
+        // var_dump($config);
         }
     }
 }
