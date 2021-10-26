@@ -48,10 +48,12 @@ class DB {
                     //ik weet niet welke nou de juiste plek is om de echo te gebruiken dus ik zet voor nu hier
                 }
         }
-        return $this;
+        // return $this;
+        // van de video 8/23 9:23
     }
-    public function error(){
-        return $this->_error;
-    }
+    // public function error(){
+    //     return $this->_error;
+    // }
+    // van de video 8/23 9:23
        
 }
