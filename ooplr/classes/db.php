@@ -82,6 +82,28 @@ class DB {
         return $this->action('DELETE', $table, $where);
     }
 
+    public function insert($table, $fields = array()) {
+        if (count($fields)) {
+            $keys = array_keys($fields);
+            $values = null;
+            $x = 1;
+            foreach ($fields as $field) {
+                $values .= '?';
+                if ($x < count($fields)) {
+                    $values .= ", ";
+                }
+                $x++;
+            }
+
+            die($values);
+
+            $sql = "INSERT INTO users (`" . implode('`, `', $keys)  . "`) VALUES ({$values})";
+
+            echo $sql;
+        }
+        return false;
+    }
+
     public function results(){
         return $this->_results;
     }

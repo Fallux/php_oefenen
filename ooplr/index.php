@@ -1,13 +1,11 @@
 <?php
 require_once 'core/init.php';
 
-$user = DB::getInstance()->query("SELECT * FROM users");
+$user = DB::getInstance()->insert('users', array(
+    'username' => 'Dale',
+    'password' => 'valid',
+    'salt' => 'salt'
+));
 
-if (!$user->count()) {
-    echo "<br><b>username niet gevonden</b>";
-}else {
-    foreach($user->results() as $user) {
-        echo "<br>" . $user->username;
-    }
-}
+
 
