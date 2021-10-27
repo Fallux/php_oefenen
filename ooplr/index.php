@@ -1,11 +1,13 @@
 <?php
 require_once 'core/init.php';
 
-$user = DB::getInstance()->query("SELECT username FROM users WHERE username = ?", array('alex'));
+$user = DB::getInstance()->query("SELECT * FROM users");
 
-// if ($user->error()) {
-//     echo "<br><b>something went wrong</b>";
-// }else {
-//     echo "<br><i>it went well</i>";
-// }
+if (!$user->count()) {
+    echo "<br><b>username niet gevonden</b>";
+}else {
+    foreach($user->results() as $user) {
+        echo "<br>" . $user->username;
+    }
+}
 

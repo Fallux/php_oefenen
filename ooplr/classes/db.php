@@ -48,12 +48,49 @@ class DB {
                     //ik weet niet welke nou de juiste plek is om de echo te gebruiken dus ik zet voor nu hier
                 }
         }
-        // return $this;
+        return $this;
         // van de video 8/23 9:23
+
     }
-    // public function error(){
-    //     return $this->_error;
-    // }
+
+    public function action($action, $table, $where= array()) {
+        if (count($where) === 3) {
+            $operators = array('=', '>', '<', '>=', '<=');
+
+            $field      = $where[0];
+            $operator   = $where[1];
+            $value      = $where[2];
+
+            if (in_array($operator, $operators)) {
+                $sql = "{$action} FROM {$table} WHERE {$field} {$operator} ?";
+
+                if (!$this->query($sql, array($value))->error()) {
+                    return $this;
+                    echo "jknfnofnozgbodnljfldf";
+                }
+            }
+        }
+        return false;
+     
+    }
+
+    public function get($table, $where) {
+        return $this->action('SELECT *', $table, $where);
+    }
+
+    public function delete($table, $where) {
+        return $this->action('DELETE', $table, $where);
+    }
+
+    public function results(){
+        return $this->_results;
+    }
+    public function error() {
+        return $this->_error;
+    }
     // van de video 8/23 9:23
-       
+    
+    public function count() {
+        return $this->_count;
+    }
 }
